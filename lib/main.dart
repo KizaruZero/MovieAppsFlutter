@@ -1,20 +1,20 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
 import 'screens/home/home_screen.dart';
-import 'config/theme.dart';
 
 void main() {
-  runApp(MovieApp());
+  runApp(MyApp());
 }
 
-class MovieApp extends StatelessWidget {
-  const MovieApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'TMDB Movie App',
-      theme: AppTheme.darkTheme,
-      home: HomeScreen(),
+      title: 'Product CRUD',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ProductHomeScreen(),
     );
   }
 }

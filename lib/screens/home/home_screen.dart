@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
-import '../movies/now_playing_screen.dart';
-import '../movies/popular_screen.dart';
-import '../movies/favorites_screen.dart';
-import '../movies/top_rated_screen.dart';
-import 'widgets/bottom_nav_bar.dart';
+import '../products/product_list_screen.dart';
+import '../products/product_crud_screen.dart';
+import 'widgets/product_navbar.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ProductHomeScreen extends StatefulWidget {
+  const ProductHomeScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ProductHomeScreenState createState() => _ProductHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ProductHomeScreenState extends State<ProductHomeScreen> {
   int _selectedIndex = 0;
-
   final List<Widget> _pages = [
-    NowPlayingScreen(),
-    PopularMoviesScreen(),
-    TopRatedScreen(),
-    FavoritesScreen(),
+    ProductListScreen(),
+    ProductCrudScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
-      bottomNavigationBar: CustomBottomNavBar(
+      bottomNavigationBar: ProductNavBar(
         selectedIndex: _selectedIndex,
         onItemTapped: (index) {
           setState(() {
